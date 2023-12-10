@@ -16,6 +16,8 @@ This application filters offers based on certain criteria. Here are the steps to
 3. **Install the Newtonsoft.Json package**: Navigate to the project directory and run the following command to add the Newtonsoft.Json package to the project:
     ```
     cd Assignment-QL\HomeProject
+    ```
+    ```
     dotnet add package Newtonsoft.Json
     ```
 
