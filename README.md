@@ -13,10 +13,11 @@ This application filters offers based on certain criteria. Here are the steps to
 
 2. **Clone the repository**: Clone the source code to your local machine.
 
-3. **Install the Newtonsoft.Json package**: Navigate to the project directory and run the following command to add the Newtonsoft.Json package to the project:
+3. **Navigate to the project directory**: Navigate to the project directory using the following command:
     ```
     cd Assignment-QL\HomeProject
     ```
+4. **Install the Newtonsoft.Json package**: Run the following command to add the Newtonsoft.Json package to the project:
     ```
     dotnet add package Newtonsoft.Json
     ```
@@ -25,7 +26,7 @@ This application filters offers based on certain criteria. Here are the steps to
 
 1. **Prepare the input file**: Place the `input.json` file in the project directory.
 
-2. **Run the application**: Open a command prompt, navigate to the project directory, and run the following command:
+2. **Run the application**: Once you are in the project directory, run the following command to start the application:
     ```
     dotnet run
     ```
