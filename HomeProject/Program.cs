@@ -68,25 +68,22 @@ public class Program
 
 	private static List<Offer> FilterOffers(Offers? offers, DateTime checkInDate)
 	{
-		if (offers == null)
+		if (offers == null || offers.OfferList == null)
 		{
-			Console.WriteLine("offers is null");
+			Console.WriteLine("offers is null or the list of offers is empty");
 			return new List<Offer>();
 		}
 
 		// Filter offers by category and valid date and select nearest merchant
 		List<Offer> validOffers = new List<Offer>();
-		if (offers?.OfferList != null)
+		foreach (var offer in offers.OfferList)
 		{
-			foreach (var offer in offers.OfferList)
+			if (CategoryHandler.IsValidCategory(offer.Category) && offer.ValidTo != null && IsValidDate(offer.ValidTo, checkInDate))
 			{
-				if (CategoryHandler.IsValidCategory(offer.Category) && offer.ValidTo != null && IsValidDate(offer.ValidTo, checkInDate))
+				var nearestMerchantOffer = SelectNearestMerchant(offer);
+				if (nearestMerchantOffer != null)
 				{
-					var nearestMerchantOffer = SelectNearestMerchant(offer);
-					if (nearestMerchantOffer != null)
-					{
-						validOffers.Add(nearestMerchantOffer);
-					}
+					validOffers.Add(nearestMerchantOffer);
 				}
 			}
 		}
